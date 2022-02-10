@@ -18,7 +18,8 @@ html {
 }
 
 body {
-  background-color: rgb(4, 115, 162);
+  background: rgb(131,58,180);
+  background: linear-gradient(90deg, rgba(131,58,180,1) 0%, rgba(253,29,29,1) 50%, rgba(252,176,69,1) 100%);
 /* Use a system font, if none are available use an available sans-sarif   font */
   font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI",
     Roboto, Oxygen-Sans, Ubuntu, Cantarell, "Helvetica Neue", sans-serif;
@@ -31,8 +32,111 @@ body {
 
 main {
   align-self: center;
-  background-color: whitesmoke;
-  width: 340px;
-  height: 55%;
+  background-color: #c18484;
+  width: 265px;
   text-align: center;
+}
+
+img {
+  border-radius: 50%;
+  border: red 4px solid;
+}
+
+h1 {
+  font-size: 3.5rem;
+  margin: 0;
+  padding: 10px 0;
+}
+
+p {
+  margin: 0;
+}
+
+#status {
+  text-align: right;
+  font-size: 1.0rem;
+  color: white;
+  padding: 10px 10px;
+}
+
+#occupation{
+  background-color: lightgray;
+  padding: 15px 0;
+}
+
+#brand {
+  display: none;
+}
+
+#offer {
+  padding: 16px 0;
+}
+
+#contact {
+  display: flex;
+}
+
+#contact > p {
+  height: 60px;
+  width: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+#contact > p:first-child {
+  background-color: #7a1c60;
+}
+
+#contact > p:last-child {
+  background-color: #feb501;
+}
+
+@media only screen and (min-width: 600px) {
+
+  main {
+    display: grid;
+    text-align: left;
+    grid-template-columns: 40% 60%;
+    grid-template-rows: auto;
+    grid-template-areas: 
+      "status name"
+      "img occupation"
+      "img brand" 
+      "contact offer";
+      width: 600px;
+  }
+
+  #status {
+    text-align: left;
+    padding: 10px;
+  }
+
+  img {
+    grid-area: img;
+    margin: 0 auto;
+  }
+
+  #brand {
+    display: inline;
+  }
+
+  #contact {
+    grid-area: contact;
+  }
+
+  #brand > p {
+    padding: 0 20px 0 8px;
+    font-size: 1.6rem;
+  }
+
+  #offer {
+    font-size: 1.4rem;
+    padding: 10px;
+  }
+
+  #name, #occupation, #brand, #offer {
+    padding-left: 20px;
+    background-color: lightgrey;
+  }
 }
